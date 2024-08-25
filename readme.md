@@ -9,7 +9,7 @@ You (hopefully) voted for someone to represent you and your interests in DC — 
 
 The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' ability to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
 
-Similar projucts don't seem to exist at the state level, though, even though state legislatures get way more done:  New York, Texas, and California passed xx, xx, and xx bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html)[^1]
+Similar projucts don't seem to exist at the state level, though, even though state legislatures get way more done:  New York, Texas, and California passed xx, xx, and xx bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html).[^1]
 
 > [!NOTE]
 > fill in NY, TX, CA numbers
@@ -162,13 +162,10 @@ The predicted value is denoted as the Representative’s “Benchmark Score” t
 3. [ ] Generalize the process to other states.
 
 
-[^1]:I don't think this is inherent to the federal government's federal-ness: Republicans had a particularly thin majority in 2023, and when you combine this with Kevin McCarthy's notoriously unpopular speakership, an abnormally unproductive year isn't as surprising
-  > [!NOTE]
+[^1]:I don't think this is inherent to the federal government's federal-ness: Republicans had a particularly thin majority in 2023, and when you combine this with Kevin McCarthy's notoriously unpopular speakership, an abnormally unproductive year isn't as surprising.
   > check above -- check no of bills passed in years where congress isn't so closely contested?
-
-  > [!NOTE] later: lin reg to see how well margin of party control predicts qty_bills_passed. i bet it's a significant predictor, but not totally linearly, since a party that's totally in control will just break up into smaller parties. See e.g. the collapse of the Whig Supremacy in England in the 1750s [check for a better link](https://en.wikipedia.org/wiki/Whigs_(British_political_party)#Whig_Supremacy) ([maybe this?](https://en.wikipedia.org/wiki/Patriot_Whigs)) and the end of the [Era of Good Feelings](https://en.wikipedia.org/wiki/Era_of_Good_Feelings) in the US during the 1824 election. 
-  
-  > [!NOTE] check what the most closely-contested state leg is, see if it's comparable to 27 in fed, bc that's *really* bad
+  later: lin reg to see how well margin of party control predicts qty_bills_passed. i bet it's a significant predictor, but not totally linearly, since a party that's totally in control will just break up into smaller parties. See e.g. the collapse of the Whig Supremacy in England in the 1750s [check for a better link](https://en.wikipedia.org/wiki/Whigs_(British_political_party)#Whig_Supremacy) ([maybe this?](https://en.wikipedia.org/wiki/Patriot_Whigs)) and the end of the [Era of Good Feelings](https://en.wikipedia.org/wiki/Era_of_Good_Feelings) in the US during the 1824 election. 
+  check what the most closely-contested state leg is, see if it's comparable to 27 in fed, bc that's *really* bad
 
 
 [^2]: This section is lifted mostly from CEL's excellent [Methodology page](https://thelawmakers.org/methodology). It's paraphrased here half because I want you to be able to read it without clicking over, and half because I'm the type of nerd for whom writing the $\LaTeX$ helps me understand.
