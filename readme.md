@@ -1,4 +1,10 @@
 # NY State Legislator Effectiveness Scores
+
+```
+bugs to think about:
+[ ] almost ten percent of bills have >2 *primary* sponsors?
+```
+
 You (hopefully) voted for someone to represent you and your interests in DC — how do you know if they're actually doing it?
 
 The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' ability to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
@@ -122,7 +128,6 @@ First, for each Congress, we estimate an Ordinary Least Squares regression model
 
 The predicted value is denoted as the Representative’s “Benchmark Score” that we refer to on the pages of this website. Having identified a Representative’s Benchmark Score, we denote a Representative’s Legislative Effectiveness Score as being “Above Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is greater than 1.50. We denote a Representative’s Legislative Effectiveness Score as being “Below Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is less than .50. Finally, we denote a Representative’s Legislative Effectiveness Score as “Meets Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is between .50 and 1.50. We employ an identical methodology to calculate a Senator’s benchmark score.
 
-
 ## Roadmap
 1. [ ] Implement in .ipynbs outputting csvs, publish csvs in repo.
 
@@ -142,6 +147,7 @@ The predicted value is denoted as the Representative’s “Benchmark Score” t
 
     c. [ ] Give credit for bills that are incorporated into the budget or other bills, in a similar way to CEL:
     > 5-gram Jaccard similarity "coupled with criteria accounting for bill length, introduction dates, companion bills, and other idiosyncrasies of the contemporary lawmaking process in Congress.When a bill’s language is substantially included in another law, the bill’s sponsor receives credit for that bill receiving action beyond committee (ABC), passing its chamber of origin (PASS) and becoming law (LAW), even if the standalone sponsored bill did not advance through such stages."
+    - or... legiscan API's `sasts` column has a `similar to` option -- look into that
 
 
 2. [ ] Make the scripts automatically update at the end of each session. (shouldn't be hard — cron jobs + lookup tables of when sessions end)
@@ -156,9 +162,7 @@ The predicted value is denoted as the Representative’s “Benchmark Score” t
 3. [ ] Generalize the process to other states.
 
 
-[^1]:
-  I don't think this is inherent to the federal government's federal-ness: Republicans had a particularly thin majority in 2023, and when you combine this with Kevin McCarthy's notoriously unpopular speakership, an abnormally unproductive year isn't as surprising
-
+[^1]:I don't think this is inherent to the federal government's federal-ness: Republicans had a particularly thin majority in 2023, and when you combine this with Kevin McCarthy's notoriously unpopular speakership, an abnormally unproductive year isn't as surprising
   > [!NOTE]
   > check above -- check no of bills passed in years where congress isn't so closely contested?
 
@@ -167,10 +171,8 @@ The predicted value is denoted as the Representative’s “Benchmark Score” t
   > [!NOTE] check what the most closely-contested state leg is, see if it's comparable to 27 in fed, bc that's *really* bad
 
 
-[^2]:
-  This section is lifted mostly from CEL's excellent [Methodology page](https://thelawmakers.org/methodology). It's paraphrased here half because I want you to be able to read it without clicking over, and half because I'm the type of nerd for whom writing the $\LaTeX$ helps me understand.
-[^3]:
-  There's a whole [formula for calculating seniority in Congress](https://history.house.gov/Institution/Seniority/Terms-of-Service/), reproduced below if you don't want to click, which I'll replicate for the states.
+[^2]: This section is lifted mostly from CEL's excellent [Methodology page](https://thelawmakers.org/methodology). It's paraphrased here half because I want you to be able to read it without clicking over, and half because I'm the type of nerd for whom writing the $\LaTeX$ helps me understand.
+[^3]: There's a whole [formula for calculating seniority in Congress](https://history.house.gov/Institution/Seniority/Terms-of-Service/), reproduced below if you don't want to click, which I'll replicate for the states.
   A legislator's seniority is defined as their position in an ordered list of all members of their house, where the list is sorted in descending order by:
   - Number of total terms served (subtracting one term from the number of non-consecutive terms), then
   - Number of consecutive terms served, then
