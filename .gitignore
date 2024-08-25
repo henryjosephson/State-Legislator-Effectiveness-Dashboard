@@ -1,0 +1,4 @@
+/src/leg_eff/leg_eff_secrets.py
+.DS_Store
+data/
+**/__pycache__/
