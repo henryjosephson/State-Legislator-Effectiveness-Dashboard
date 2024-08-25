@@ -48,8 +48,7 @@ It has three types of variables:
 
 With that said, take a deep breath:
 
-$$
-LES_{it} = 
+$$LES_{it} = 
 \begin{bmatrix}
     \dfrac{
         \alpha BILL_{it}^C 
@@ -108,8 +107,7 @@ LES_{it} =
     }{
         5
     }\\
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 As CEL notes, the $\dfrac{N}{5}$ factor normalizes the average LES to 1 in each Congress.
 
@@ -117,7 +115,7 @@ To get from $LES$ to a given legislator's Benchmark Score $\widehat{LES}$, you c
 - Legislator $i$'s seniority in session $t$,[^3]
 - An indicator variable for if legislator $i$ was a member of the majority party in session $t$,
 - An indicator variable for if legislator $i$ was a committee chair during session $t$, and
-- An indicator 
+- An indicator variable for if legislator $i$ was a sub-committee chair during session $t$.
 
 When you write that out as an equation, you get something like this:
 
