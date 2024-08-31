@@ -48,66 +48,7 @@ It has three types of variables:
 
 With that said, take a deep breath:
 
-$$LES_{it} = 
-\begin{bmatrix}
-    \dfrac{
-        \alpha BILL_{it}^C 
-        + \beta BILL_{it}^S 
-        + \gamma BILL_{it}^{SS}
-    }{
-        \alpha \sum_{j=1}\limits^{N}BILL_{it}^C 
-        + \beta \sum_{j=1}\limits^{N} BILL_{it}^S 
-        + \sum_{j=1}\limits^{N} \gamma BILL_{it}^{SS}
-    }\\
-    \\
-    + \dfrac{
-        \alpha AIC_{it}^C 
-        + \beta AIC_{it}^S 
-        + \gamma AIC_{it}^{SS}
-    }{
-        \alpha \sum_{j=1}\limits^{N}AIC_{it}^C 
-        + \beta \sum_{j=1}\limits^{N} AIC_{it}^S 
-        + \sum_{j=1}\limits^{N} \gamma AIC_{it}^{SS}
-    }\\
-    \\
-    + \dfrac{
-        \alpha ABC_{it}^C 
-        + \beta ABC_{it}^S 
-        + \gamma ABC_{it}^{SS}
-    }{
-        \alpha \sum_{j=1}\limits^{N}ABC_{it}^C 
-        + \beta \sum_{j=1}\limits^{N} ABC_{it}^S 
-        + \sum_{j=1}\limits^{N} \gamma ABC_{it}^{SS}
-    }\\
-    \\
-    + \dfrac{
-        \alpha PASS_{it}^C 
-        + \beta PASS_{it}^S 
-        + \gamma PASS_{it}^{SS}
-    }{
-        \alpha \sum_{j=1}\limits^{N}PASS_{it}^C 
-        + \beta \sum_{j=1}\limits^{N} PASS_{it}^S 
-        + \sum_{j=1}\limits^{N} \gamma PASS_{it}^{SS}
-    }\\
-    \\
-    + \dfrac{
-        \alpha LAW_{it}^C 
-        + \beta LAW_{it}^S 
-        + \gamma LAW_{it}^{SS}
-    }{
-        \alpha \sum_{j=1}\limits^{N}LAW_{it}^C 
-        + \beta \sum_{j=1}\limits^{N} LAW_{it}^S 
-        + \sum_{j=1}\limits^{N} \gamma LAW_{it}^{SS}
-    }
-\end{bmatrix}
-
-\begin{bmatrix}
-    \dfrac{
-        N
-    }{
-        5
-    }\\
-\end{bmatrix}$$
+$$LES_{it}=\begin{bmatrix}\dfrac{\alphaBILL_{it}^C+\betaBILL_{it}^S+\gammaBILL_{it}^{SS}}{\alpha\sum_{j=1}\limits^{N}BILL_{it}^C+\beta\sum_{j=1}\limits^{N}BILL_{it}^S+\sum_{j=1}\limits^{N}\gammaBILL_{it}^{SS}}\\\\+\dfrac{\alphaAIC_{it}^C+\betaAIC_{it}^S+\gammaAIC_{it}^{SS}}{\alpha\sum_{j=1}\limits^{N}AIC_{it}^C+\beta\sum_{j=1}\limits^{N}AIC_{it}^S+\sum_{j=1}\limits^{N}\gammaAIC_{it}^{SS}}\\\\+\dfrac{\alphaABC_{it}^C+\betaABC_{it}^S+\gammaABC_{it}^{SS}}{\alpha\sum_{j=1}\limits^{N}ABC_{it}^C+\beta\sum_{j=1}\limits^{N}ABC_{it}^S+\sum_{j=1}\limits^{N}\gammaABC_{it}^{SS}}\\\\+\dfrac{\alphaPASS_{it}^C+\betaPASS_{it}^S+\gammaPASS_{it}^{SS}}{\alpha\sum_{j=1}\limits^{N}PASS_{it}^C+\beta\sum_{j=1}\limits^{N}PASS_{it}^S+\sum_{j=1}\limits^{N}\gammaPASS_{it}^{SS}}\\\\+\dfrac{\alphaLAW_{it}^C+\betaLAW_{it}^S+\gammaLAW_{it}^{SS}}{\alpha\sum_{j=1}\limits^{N}LAW_{it}^C+\beta\sum_{j=1}\limits^{N}LAW_{it}^S+\sum_{j=1}\limits^{N}\gammaLAW_{it}^{SS}}\end{bmatrix}\begin{bmatrix}\dfrac{N}{5}\\\end{bmatrix}$$
 
 As CEL notes, the $\dfrac{N}{5}$ factor normalizes the average LES to 1 in each Congress.
 
