@@ -1,7 +1,7 @@
-# NY State Legislator Effectiveness Scores
+# State Legislator Effectiveness Dashboard
 You (hopefully) voted for someone to represent you and your interests in DC — how do you know if they're actually doing it?
 
-The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' ability to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
+The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' abilities to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
 
 Similar projucts don't seem to exist at the state level, though, even though state legislatures get way more done:  New York, Texas, and California passed xx, xx, and xx bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html).[^1]
 
@@ -18,6 +18,7 @@ Why start with New York? Three main reasons:
 ## Methodology
 Feel free to skip this if you don't care about the math.
 
+### CEL
 I've reproduced CEL's original formula below. It looks like a beast, but it isn't too bad; you just have to know what everything means.
 
 It has three types of variables:
@@ -112,11 +113,23 @@ To get from $LES$ to a given legislator's Benchmark Score $\widehat{LES}$, you c
 When you write that out as an equation, you get something like this:
 
 $$
-\widehat{LES}_{it} = \hat\alpha + Pseniority SenioritYit + Amajority MajoritYi + Bcom chair Com_Chair + Bsubcom chair Subcom_Chairit
+\widehat{LES}_{it} = \hat\alpha + \beta_{seniority} Seniority_{it} + \beta_{majority}Majority_{it} + \beta{com chair}Com_Chair_{it} + \beta{subcom chair}Subcom_Chair_{it}
 $$
 First, for each Congress, we estimate an Ordinary Least Squares regression model where the dependent variable is Representative i’s LES, and the independent variables are Representative i’s Seniority, an indicator variable for whether she was a member of the majority party, and indicator variables for whether she held a committee and/or subcommittee chair. After estimating the regression coefficients that correspond to each of the independent variables, we generated linear predicted values for each Representative’s LES in the given Congress.
 
 The predicted value is denoted as the Representative’s “Benchmark Score” that we refer to on the pages of this website. Having identified a Representative’s Benchmark Score, we denote a Representative’s Legislative Effectiveness Score as being “Above Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is greater than 1.50. We denote a Representative’s Legislative Effectiveness Score as being “Below Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is less than .50. Finally, we denote a Representative’s Legislative Effectiveness Score as “Meets Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is between .50 and 1.50. We employ an identical methodology to calculate a Senator’s benchmark score.
+
+### Me
+
+#### NY
+We're going to just start with NY, though I of course have greater ambitions. Thanks to conversations with Alex Bores, I'm making two tweaks to CEL's formula here.
+1. I'm dropping the "action beyond committee" flag — it's probably very helpful at the federal level, but, thanks to my inside source, I know that making it to the floor is tantamount to getting passed. To quote Alex,
+> The only things that happen on the floor other than passing are:
+> 1. A bill is voted down (I've only seen that twice in 2 years)
+> 2. A very minor technical amendment is made unanimously.
+
+1. Becuase NY's senate passes three times as many bills as their assembly, I'm adding a feature for "passes the other house."
+    This is also why, for New York, I'll be presenting Senators and Assemblypeople separately.
 
 ## Roadmap
 1. [ ] Implement in .ipynbs outputting csvs, publish csvs in repo.
