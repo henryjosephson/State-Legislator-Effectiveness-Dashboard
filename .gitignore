@@ -1,4 +1,7 @@
+/Future \Caucus \Bill \Search.ipynb
 /src/leg_eff/leg_eff_secrets.py
 .DS_Store
 data/
 **/__pycache__/
+**/.venv/
+/data
