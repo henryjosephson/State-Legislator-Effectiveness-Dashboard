@@ -106,9 +106,13 @@ def main(state, year):
     RAW_DATA_DIR = os.path.join(DATA_DIR, "raw")
 
     if state == "NY":
-        senate_api_data_path = os.path.join(RAW_DATA_DIR, f"NY-{year}.json")
+        outputs = []
+        sen = None
+        leg = None
+
+        senate_api_data_path = os.path.join(RAW_DATA_DIR, f"NY-{year}-senate.json")
         if os.path.exists(senate_api_data_path):
-            logger.info("found ny bills json")
+            logger.info(f"found ny bills senate json for {year}")
             last_modified = datetime.fromtimestamp(
                 os.path.getmtime(senate_api_data_path)
             )
@@ -121,11 +125,37 @@ def main(state, year):
             redownload = input("y/[n]: ") or "y"
             if redownload.lower() == "y":
                 logger.info("Redownloading")
-                return NY_read_senate_api.main(year, get_ny_senate_api_key.main())
+                sen = NY_read_senate_api.main(year, get_ny_senate_api_key.main())
             logger.info("Using existing data.")
-            return pd.read_json(senate_api_data_path)
-        logger.info("Downloading NY bills")
-        return NY_read_senate_api.main(year, get_ny_senate_api_key.main())
+            sen = pd.read_json(senate_api_data_path)
+        logger.info("Downloading NY bills from senate api.")
+
+        legiscan_data_path = os.path.join(RAW_DATA_DIR, f"NY-{year}.json")
+        if os.path.exists(legiscan_data_path):
+            logger.info(f"found ny bills legiscan json for {year}")
+            last_modified = datetime.fromtimestamp(os.path.getmtime(legiscan_data_path))
+            print(
+                "You've already downloaded the bills from LegiScan for "
+                + f"{year}. That file was last modified on "
+                + str(last_modified)
+                + ".\nDo you want to redownload?"
+            )
+            redownload = input("y/[n]: ") or "n"
+            if redownload.lower() == "y":
+                logger.info("Redownloading")
+                leg = load_datasets("NY", year)
+
+        if isinstance(sen, pd.DataFrame):
+            outputs.append(sen)
+        else:
+            sen = NY_read_senate_api.main(year, get_ny_senate_api_key.main())
+
+        if isinstance(leg, pd.DataFrame):
+            outputs.append(leg)
+        else:
+            leg = load_datasets("NY", year)
+
+        return outputs
 
     logger.info("Downloading dataset from legiscan")
     return load_datasets(state, year)
