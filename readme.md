@@ -3,10 +3,7 @@ You (hopefully) voted for someone to represent you and your interests in DC — 
 
 The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' abilities to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
 
-Similar projucts don't seem to exist at the state level, though, even though state legislatures get way more done:  New York, Texas, and California passed xx, xx, and xx bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html).[^1]
-
-> [!NOTE]
-> fill in NY, TX, CA numbers
+Similar projucts don't seem to exist at the state level, though, even though state legislatures get way more done:  New York, Texas, and California passed , xx, and 1,046[^3] bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html).[^4]
 
 Here, I'm replicating CEL's methodology for New York State, though I plan to eventually expand this to all 50 states states.
 
@@ -39,7 +36,7 @@ It has three types of variables:
     - $S$ for the number of substantive bills,
         - $C$ bills are weighted by $beta = 5$,
     - $SS$ for the number of substantive and significant bills,
-        - $SS$ bills are weighted by $\gamma = 10$.[^2]
+        - $SS$ bills are weighted by $\gamma = 10$.[^5]
 
 With that said, take a deep breath:
 
@@ -105,7 +102,7 @@ $$LES_{it} =
 As CEL notes, the $\dfrac{N}{5}$ factor normalizes the average LES to 1 in each Congress.
 
 To get from $LES$ to a given legislator's Benchmark Score $\widehat{LES}$, you can use an ordinary least squares regression model to predict a given legislator $i$'s LES in a given congressional session $t$, using the following as predictors:
-- Legislator $i$'s seniority in session $t$,[^3]
+- Legislator $i$'s seniority in session $t$,[^5]
 - An indicator variable for if legislator $i$ was a member of the majority party in session $t$,
 - An indicator variable for if legislator $i$ was a committee chair during session $t$, and
 - An indicator variable for if legislator $i$ was a sub-committee chair during session $t$.
@@ -165,14 +162,16 @@ We're going to just start with NY, though I of course have greater ambitions. Th
 3. [ ] Generalize the process to other states.
 
 
-[^1]:I don't think this is inherent to the federal government's federal-ness: Republicans had a particularly thin majority in 2023, and when you combine this with Kevin McCarthy's notoriously unpopular speakership, an abnormally unproductive year isn't as surprising.
-  check above -- check no of bills passed in years where congress isn't so closely contested?
-  later: lin reg to see how well margin of party control predicts qty_bills_passed. i bet it's a significant predictor, but not totally linearly, since a party that's totally in control will just break up into smaller parties. See e.g. the collapse of the Whig Supremacy in England in the 1750s [check for a better link](https://en.wikipedia.org/wiki/Whigs_(British_political_party)#Whig_Supremacy) ([maybe this?](https://en.wikipedia.org/wiki/Patriot_Whigs)) and the end of the [Era of Good Feelings](https://en.wikipedia.org/wiki/Era_of_Good_Feelings) in the US during the 1824 election. 
-  also check what the most closely-contested state leg is, see if it's comparable to 27 in fed, bc that's *really* bad
+[^3]:
+  Though Gavin Newsom vetoed 156 of these, meaning that only 890 were actually enacted. https://calmatters.org/explainers/new-california-laws/.
+[^4]:
+  I don't think this is inherent to the federal government's federal-ness: Republicans had a particularly thin majority in 2023, and when you combine this with Kevin McCarthy's notoriously unpopular speakership, an abnormally unproductive year isn't as surprising. An interesting research task for someone who has the time (which may just be future me) is to check this — how many more bills get through when congress isn't so closely contested. Is the margin of party control a significant predictor of the number of bills that a legislature passes? I'd bet it's a significant predictor, but that the relationship isn't totally linear, since a party that's totally in control will just break up into smaller parties. See e.g. the collapse of the Whig Supremacy in England in the 1750s [Whig Supremacy](https://en.wikipedia.org/wiki/Whigs_(British_political_party)#Whig_Supremacy), [Whig Split](https://en.wikipedia.org/wiki/Whig_Split), [Patriot Whigs](https://en.wikipedia.org/wiki/Patriot_Whigs) and the end of the [Era of Good Feelings](https://en.wikipedia.org/wiki/Era_of_Good_Feelings) in the US during the 1824 election.
+  Are the most closely contested state legislatures also the ones that get the fewest bills passed?
 
-
-[^2]: This section is lifted mostly from CEL's excellent [Methodology page](https://thelawmakers.org/methodology). It's paraphrased here half because I want you to be able to read it without clicking over, and half because I'm the type of nerd for whom writing the $\LaTeX$ helps me understand.
-[^3]: There's a whole [formula for calculating seniority in Congress](https://history.house.gov/Institution/Seniority/Terms-of-Service/), reproduced below if you don't want to click, which I'll replicate for the states.
+[^5]:
+  This section is lifted mostly from CEL's excellent [Methodology page](https://thelawmakers.org/methodology). It's paraphrased here half because I want you to be able to read it without clicking over, and half because I'm the type of nerd for whom writing the $\LaTeX$ helps me understand.
+[^6]:
+  There's a whole [formula for calculating seniority in Congress](https://history.house.gov/Institution/Seniority/Terms-of-Service/), reproduced below if you don't want to click, which I'll replicate for the states.
   A legislator's seniority is defined as their position in an ordered list of all members of their house, where the list is sorted in descending order by:
   /- Number of total terms served (subtracting one term from the number of non-consecutive terms), then
   /- Number of consecutive terms served, then
