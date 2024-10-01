@@ -16,7 +16,7 @@ Why start with New York? Three main reasons:
 Feel free to skip this if you don't care about the math.
 
 <details>
-    <summary>### CEL's methodology</summary>
+    <summary> ### CEL's methodology</summary>
 
 I've reproduced CEL's original formula below. It looks like a beast, but it isn't too bad; you just have to know what everything means.
 
@@ -99,7 +99,8 @@ $$LES_{it} =
     }{
         5
     }\\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 As CEL notes, the $\dfrac{N}{5}$ factor normalizes the average LES to 1 in each Congress.
 
@@ -114,6 +115,7 @@ When you write that out as an equation, you get something like this:
 $$
 \widehat{LES}_{it} = \hat\alpha + \beta_{seniority} Seniority_{it} + \beta_{majority}Majority_{it} + \beta{com chair}Com_Chair_{it} + \beta{subcom chair}Subcom_Chair_{it}
 $$
+
 First, for each Congress, we estimate an Ordinary Least Squares regression model where the dependent variable is Representative i’s LES, and the independent variables are Representative i’s Seniority, an indicator variable for whether she was a member of the majority party, and indicator variables for whether she held a committee and/or subcommittee chair. After estimating the regression coefficients that correspond to each of the independent variables, we generated linear predicted values for each Representative’s LES in the given Congress.
 
 The predicted value is denoted as the Representative’s “Benchmark Score” that we refer to on the pages of this website. Having identified a Representative’s Benchmark Score, we denote a Representative’s Legislative Effectiveness Score as being “Above Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is greater than 1.50. We denote a Representative’s Legislative Effectiveness Score as being “Below Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is less than .50. Finally, we denote a Representative’s Legislative Effectiveness Score as “Meets Expectations” if the ratio of her Legislative Effectiveness Score to her Benchmark Score is between .50 and 1.50. We employ an identical methodology to calculate a Senator’s benchmark score.
@@ -121,13 +123,13 @@ The predicted value is denoted as the Representative’s “Benchmark Score” t
 </details>
 
 <details>
-    <summary>### My methodology</summary>
+    <summary> ### My methodology</summary>
 
-    Though CEL's methods work wonderfully at the federal level, lots of states have weird little quirks that are important to know! For example, the only "action beyond committee" that ever happens in NY is getting approved. To see how the methodology changes for each state, unfold that state's section below.
+Though CEL's methods work wonderfully at the federal level, lots of states have weird little quirks that are important to know! For example, the only "action beyond committee" that ever happens in NY is getting approved. To see how the methodology changes for each state, unfold that state's section below.
 
 
 <details>
-    <summary> - New York</summary>
+    <summary> #### New York</summary>
 We're going to just start with NY, though I of course have greater ambitions. Thanks to conversations with Alex Bores, I'm making two tweaks to CEL's formula here.
 
 1. I'm dropping the "action beyond committee" flag — it's probably very helpful at the federal level, but, thanks to my inside source, I know that making it to the floor is tantamount to getting passed. To quote Alex,
