@@ -42,7 +42,8 @@ It has three types of variables:
 
 With that said, take a deep breath:
 
-$$LES_{it} = 
+```math
+LES_{it} = 
 \begin{bmatrix}
     \dfrac{
         \alpha BILL_{it}^C 
@@ -100,7 +101,7 @@ $$LES_{it} =
         5
     }\\
 \end{bmatrix}
-$$
+```
 
 As CEL notes, the $\dfrac{N}{5}$ factor normalizes the average LES to 1 in each Congress.
 
@@ -112,9 +113,9 @@ To get from $LES$ to a given legislator's Benchmark Score $\widehat{LES}$, you c
 
 When you write that out as an equation, you get something like this:
 
-$$
+```math
 \widehat{LES}_{it} = \hat\alpha + \beta_{seniority} Seniority_{it} + \beta_{majority}Majority_{it} + \beta{com chair}Com_Chair_{it} + \beta{subcom chair}Subcom_Chair_{it}
-$$
+```
 
 First, for each Congress, we estimate an Ordinary Least Squares regression model where the dependent variable is Representative i’s LES, and the independent variables are Representative i’s Seniority, an indicator variable for whether she was a member of the majority party, and indicator variables for whether she held a committee and/or subcommittee chair. After estimating the regression coefficients that correspond to each of the independent variables, we generated linear predicted values for each Representative’s LES in the given Congress.
 
