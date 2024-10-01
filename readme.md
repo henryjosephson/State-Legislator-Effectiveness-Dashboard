@@ -113,7 +113,7 @@ To get from $LES$ to a given legislator's Benchmark Score $\widehat{LES}$, you c
 
 When you write that out as an equation, you get something like this:
 
-$`\widehat{LES}_{it} = \hat\alpha + \beta_{seniority}Seniority_{it} + \beta_{majority}Majority_{it} + \beta{com chair}Com_Chair_{it} + \beta{subcom chair}Subcom_Chair_{it}`$
+$`\widehat{LES}_{it} = \hat\alpha + \beta_{seniority}Seniority_{it} + \beta_{majority}Majority_{it} + \beta{com chair}{Com\_Chair}_{it} + \beta{subcom chair}{Subcom\_Chair}_{it}`$
 
 First, for each Congress, we estimate an Ordinary Least Squares regression model where the dependent variable is Representative i’s LES, and the independent variables are Representative i’s Seniority, an indicator variable for whether she was a member of the majority party, and indicator variables for whether she held a committee and/or subcommittee chair. After estimating the regression coefficients that correspond to each of the independent variables, we generated linear predicted values for each Representative’s LES in the given Congress.
 
