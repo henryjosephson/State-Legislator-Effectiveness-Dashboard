@@ -123,16 +123,22 @@ Feel free to skip this if you don't care about the math.
 <details>
     <summary>## My methodology</summary>
     Though CEL's methods work wonderfully at the federal level, lots of states have weird little quirks that are important to know! For example, the only "action beyond committee" that ever happens in NY is getting approved. To see how the methodology changes for each state, unfold that state's section below.
-    <details>
-        <summary> - New York</summary>
-        We're going to just start with NY, though I of course have greater ambitions. Thanks to conversations with Alex Bores, I'm making two tweaks to CEL's formula here.
-        1. I'm dropping the "action beyond committee" flag — it's probably very helpful at the federal level, but, thanks to my inside source, I know that making it to the floor is tantamount to getting passed. To quote Alex,
-        > The only things that happen on the floor other than passing are:
-        > 1. A bill is voted down (I've only seen that twice in 2 years)
-        > 2. A very minor technical amendment is made unanimously.
 
-        1. Becuase NY's senate passes three times as many bills as their assembly, I'm adding a feature for "passes the other house."
-            This is also why, for New York, I'll be presenting Senators and Assemblypeople separately.
+<details>
+    <summary> - New York</summary>
+    We're going to just start with NY, though I of course have greater ambitions. Thanks to conversations with Alex Bores, I'm making two tweaks to CEL's formula here.
+
+    1. I'm dropping the "action beyond committee" flag — it's probably very helpful at the federal level, but, thanks to my inside source, I know that making it to the floor is tantamount to getting passed. To quote Alex,
+
+    > The only things that happen on the floor other than passing are:
+
+    > 1. A bill is voted down (I've only seen that twice in 2 years)
+
+    > 2. A very minor technical amendment is made unanimously.
+
+    1. Becuase NY's senate passes three times as many bills as their assembly, I'm adding a feature for "passes the other house."
+
+    This is also why, for New York, I'll be presenting Senators and Assemblypeople separately.
 </details>
 
 </details>
