@@ -133,7 +133,7 @@ Feel free to skip this if you don't care about the math.
 
         1. Becuase NY's senate passes three times as many bills as their assembly, I'm adding a feature for "passes the other house."
             This is also why, for New York, I'll be presenting Senators and Assemblypeople separately.
-    </details>
+</details>
 
 </details>
 
