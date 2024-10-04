@@ -97,8 +97,8 @@ def merge_json_files(directory: str, output_file: str) -> None:
 def main(year: int, api_key) -> pd.DataFrame:
     fetch_ny_senate_bills(year, api_key)
     merge_json_files(
-        os.path.join("..", "data", "raw", "senate-api"),
-        os.path.join("..", "data", "raw", f"NY-{year}-senate.json"),
+        os.path.join("..", "..", "data", "raw", "senate-api"),
+        os.path.join("..", "..", "data", "raw", f"NY-{year}-senate.json"),
     )
     bills_df = pd.read_json(
         os.path.join("..", "data", "raw", f"NY-{year}-senate.json")
