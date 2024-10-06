@@ -121,8 +121,8 @@ def main(state, year):
                 + f" for {year}. That file was last modified on "
                 + str(last_modified)
                 + ".\nDo you want to redownload?"
-            )
-            redownload = input("y/[n]: ") or "y"
+            )  # TODO: update with https://legislation.nysenate.gov/static/docs/html/bills.html#get-bill-updates
+            redownload = input("y/[n]: ") or "n"
             if redownload.lower() == "y":
                 logger.info("Redownloading")
                 sen = NY_read_senate_api.main(year, get_ny_senate_api_key.main())
