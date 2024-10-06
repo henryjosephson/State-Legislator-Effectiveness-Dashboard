@@ -149,11 +149,13 @@ def main(state, year):
             outputs.append(sen)
         else:
             sen = NY_read_senate_api.main(year, get_ny_senate_api_key.main())
+            outputs.append(sen)
 
         if isinstance(leg, pd.DataFrame):
             outputs.append(leg)
         else:
             leg = load_datasets("NY", year)
+            outputs.append(leg)
 
         return outputs
 
