@@ -1,4 +1,9 @@
 # State Legislator Effectiveness Dashboard
+
+This is a developmental branch where I'm working on replacing manual dataset downloads with Legiscan's automatic dataset downloader.
+
+---
+
 You (hopefully) voted for someone to represent you and your interests in DC — how do you know if they're actually doing it?
 
 The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' abilities to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
