@@ -3,7 +3,7 @@ You (hopefully) voted for someone to represent you and your interests in DC — 
 
 The [Center for Effective Lawmaking](https://thelawmakers.org/), a joint project of the University of Virginia and Vanderbilt University, tries to answer that question by ranking lawmakers' abilities to get legislation that they've introduced enacted into law. Though their methodology doesn't count other effective things — e.g. working behind the scenes to pass a bill that isn't theirs or serving as a whip or party leader — it's a great start!
 
-Similar projucts don't seem to exist at the state level, though, even though state legislatures get way more done:  New York and California enacted 1,616[^1] and 890[^2] bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html).[^3]
+Similar projects don't seem to exist at the state level, though, even though state legislatures get way more done:  New York and California enacted 1,616[^1] and 890[^2] bills into law in 2023, respectively. Compare this to the paltry [27 bills that the federal government enacted into law that same year](https://www.nytimes.com/2023/12/19/us/politics/bills-laws-2023-house-congress.html).[^3]
 
 Here, I'm replicating CEL's methodology for New York State, though I plan to eventually expand this to all 50 states states.
 
